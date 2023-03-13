@@ -1,6 +1,18 @@
 <?php
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    session_start();
+
+    $users = json_decode(file_get_contents(__DIR__ . '/id.json'));
+
+    // tikrinam
+    foreach($users as $user) {
+        if ($user['user_id'] == $id) {
+            $_SESSION['msg'] = ['type' => 'error', 'text' => 'ID is invalid'];
+            header('Location: http://localhost/bankai/u2/create.php');
+        die;
+    }
+}
 
     $id = json_decode(file_get_contents(__DIR__ . '/id.json'));
     $id++;
@@ -14,12 +26,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         'saskaitos_nr' => $_POST['saskaitos_nr']
     ];
 
+    $users = json_decode(file_get_contents(__DIR__ . '/id.json'));
+
     $users = $user;
 
     $users = json_encode($users);
     file_put_contents(__DIR__ . '/id.json', $users);
 
-
+    $_SESSION['msg'] = ['type' => 'ok', 'text' => 'User was created'];
     header('Location: http://localhost/bankai/u2/users.php');
     die;
 }

@@ -4,7 +4,7 @@
         http_response_code(400);
         die;
     }
-
+    session_start();
     $id = (int) $_GET['id'];
 
     $users_ = json_decode(file_get_contents(__DIR__ . '/id.json'));
@@ -13,7 +13,7 @@
 
     $users= json_encode($users);
     file_put_contents(__DIR__ . '/id.json', $users);
-
+    $_SESSION['msg'] = ['type' => 'ok', 'text' => 'User was deleted'];
     header('Location: http://localhost/bankai/u2/users.php');
 
 
