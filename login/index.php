@@ -8,12 +8,12 @@ session_start();
         if ($user['name'] == $_POST['name'] && $user['password'] == md5($_POST['password'])) {
             $_SESSION['logged'] = 1;
             $_SESSION['name'] = $user['name'];
-            header('Location: http://localhost/uzduotys/u2/u2_bankas/Employees/');
+            header('Location: http://localhost/bankai/u2/Employees/');
             die;
         }
     }
     $_SESSION['msg'] = ['type' => 'error', 'text' => 'Login failed'];
-    header('Location: http://localhost/uzduotys/u2/u2_bankas/login/');
+    header('Location: http://localhost/bankai/u2/login/');
     die;
 }
 
