@@ -1,3 +1,6 @@
+h1 {
+    margin: 50px;
+}
 form {
     display: flex;
     flex-direction: column;
@@ -8,13 +11,11 @@ form {
     border: 1px solid black;
     width: 250px;
 }
-label {
-    width: 100px;
-    display: inline-block;
-}
 div {
     margin-bottom: 10px;
 }
-h1 {
-    margin: 50px;
-}
+label {
+    width: 100px;
+    display: inline-block;
+    }
+

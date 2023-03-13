@@ -9,6 +9,7 @@
 </head>
 <body>
     <?php require __DIR__ . '/menu.php'?>
+    <?php require __DIR__ . '/menu_customer.php'?>
     <h1>Welcome to your First Bank</h1>
 </body>
 </html>
