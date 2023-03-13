@@ -12,3 +12,5 @@
 <a href="http://localhost/bankai/u2/">HOME</a>
 <a href="http://localhost/bankai/u2/Employees">Work Place</a>
 <a href="http://localhost/bankai/u2/login">Login</a>
+<a href="http://localhost/bankai/u2/create.php">Create New Account</a>
+<a href="http://localhost/bankai/u2/users.php?page=1&sort=asc">Account List</a>

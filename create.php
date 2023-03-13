@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $users = $user;
 
     $users = json_encode($users);
-    file_put_contents(__DIR__ . '/id.json');
+    file_put_contents(__DIR__ . '/id.json', $users);
 
 
     header('Location: http://localhost/bankai/u2/users.php');

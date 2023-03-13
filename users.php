@@ -3,9 +3,21 @@
 
     $page = (int) ($_GET['page'] ?? 1);
 
+    $sort = $_GET['sort'] ?? '';
+
+    if ($sort == 'surname_asc') {
+        usort($users, fn($a, $b) => $a['surname'] <=> $b['surname']);
+    }
+    elseif ($sort == 'surname_desc') {
+        usort($users, fn($a, $b) => $b['surname'] <=> $a['surname']);
+    }
+    elseif ($sort == 'id_asc') {
+        usort($users, fn($a, $b) => $a['user_id'] <=> $b['user_id']);
+    }
+    elseif ($sort == 'id_desc') {
+        usort($users, fn($a, $b) => $a['user_id'] <=> $b['user_id']);
+    }
     // $users = array_slice($users, ($page - 1) * 10, 10); skaldo userius po 10 puslapy.
-
-
 
 
 ?>
@@ -18,17 +30,15 @@
     <title>Users</title>
 </head>
 <body>
-    <a href="http://localhost/bankai/u2/users.php?page=1&sort=asc">Page 1</a>
-    <a href="http://localhost/bankai/u2/users.php?page=2">Page 2</a>
-    <a href="http://localhost/bankai/u2/users.php?page=3">Page 3</a>
+        <?php require __DIR__ . '/menu_customer.php' ?>
     <form action="" method="get">
         <fieldset>
             <legend>SORT:</legend>
             <select name="sort">
-                <option value="surname_asc">Surname A-Z</option>
-                <option value="surname_desc">Surname Z-A</option>
-                <option value="id_asc">ID 1-9</option>
-                <option value="id_desc">ID 9-1</option>
+                <option value="surname_asc" <?php if ($sort == 'surname_asc') echo 'selected' ?>>Surname A-Z</option>
+                <option value="surname_desc" <?php if ($sort == 'surname_desc') echo 'selected' ?>>Surname Z-A</option>
+                <option value="id_asc" <?php if ($sort == 'id_asc') echo 'selected' ?>>ID 1-9</option>
+                <option value="id_desc" <?php if ($sort == 'id_desc') echo 'selected' ?>>ID 9-1</option>
             </select>
             <button type="submit">Sort</button>
         </fieldset>
@@ -37,7 +47,9 @@
     <?php foreach($users as $user) : ?>
         <li>
             <b>ID:</b> <?= $user['user_id'] ?> <i><?= $user['name'] ?> <?= $user['surname'] ?></i>
-        
+            <form action="http://localhost/bankai/u2/delete.php?id=<?= $user['user_id'] ?>" method="post">
+                <button type="submit">Delete</button>
+            </form>
         </li>
     <?php endforeach ?>
     </ul>
