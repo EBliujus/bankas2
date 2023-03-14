@@ -12,12 +12,15 @@
     }
     a{
         text-decoration:none;
-        font-size: 16px;
         color: red;
-        padding: 0px 20px;
+        display: inline-block;
+        padding : 0px 10px;
     }
     a:hover{
         color: black;
+    }
+    .login {
+        color: green;
     }
     form {
         display: flex;
@@ -55,7 +58,7 @@ session_start();
     <button type="submit">Log Out</button>
 </form>
 <?php else : ?>
-<a href="http://localhost/bankai/u2/login">Login</a>
+<a class="login" href="http://localhost/bankai/u2/login">Login</a>
 <?php endif ?>
 
 
