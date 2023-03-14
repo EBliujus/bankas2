@@ -5,7 +5,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 $id = (int)$_GET['id'];
 
-$users = json_decode(file_get_contents(__DIR__ . '/id.json'));
+$users = json_decode(file_get_contents(__DIR__ . '/customer.json'));
 
 // tikrinam
 foreach($users as $user) {
@@ -23,7 +23,7 @@ foreach($users as $user) {
         $user['surname'] = $_POST['surname'];
 
         $users = json_encode($users);
-        file_put_contents(__DIR__ . '/id.json', $users);
+        file_put_contents(__DIR__ . '/customer.json', $users);
 
         break;
     }
@@ -34,7 +34,7 @@ foreach($users as $user) {
 }
 // GET Scenarijus
 
-$users = json_decode(file_get_contents(__DIR__ . '/id.json'));
+$users = json_decode(file_get_contents(__DIR__ . '/customer.json'));
 
 $id = (int)$_GET['id'];
 
@@ -73,11 +73,11 @@ if ($find) {
         <fieldset>
             <legend> Edit:</legend>
             <label>Name:</label>
-            <input type="text" name="name" value="<?= $user['name'] ?>>
-            <label>Surname:</label>
-            <input type="text" name="surname" value="<?= $user['surname'] ?>>
-            <label>a/k:</label>
-            <input type="text" name="a/k">
+            <input type="text" name="name" value= "<?= $user['name'] ?>">
+            <label> Surname: </label>
+            <input type="text" name="surname" value="<?= $user['surname'] ?>">
+            <label>aKodas</label>
+            <input type="text" name="aKodas">
             <label>Sąskaitos Nr.:</label>
             <input type="text" name="saskaitos_nr">
             <input hidden value="0.00" name="likutis">

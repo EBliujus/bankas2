@@ -4,11 +4,19 @@ session_start();
 
     $users = json_decode(file_get_contents(__DIR__ .'/../db/users.json'), 1);
 
+    // 1 LOGOUT'As
+   if(isset($_GET['logout'])) {
+        unset($_SESSION['logged'], $_SESSION['name']);
+        header('Location: http://localhost/bankai/u2/');
+        die;
+   } 
+
+    // 2 LOGIN'As
     foreach($users as $user) {
         if ($user['name'] == $_POST['name'] && $user['password'] == md5($_POST['password'])) {
             $_SESSION['logged'] = 1;
             $_SESSION['name'] = $user['name'];
-            header('Location: http://localhost/bankai/u2/Employees/');
+            header('Location: http://localhost/bankai/u2/index.php');
             die;
         }
     }
@@ -17,7 +25,7 @@ session_start();
     die;
 }
 
-
+    // 3 SHOW LOGIN FORM
 
 ?>
 

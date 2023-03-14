@@ -12,3 +12,5 @@ $ak = "{$I_sk}{$metu_sk}{$menuo_sk}{$diena_sk}{$rand_sk}{$rand_sk2}";
 echo $ak;
 ?>
 
+<b>ID:</b> <?= $user->user_id ?> <i><?= $user->name ?> <?= $user->surname ?> <?= $user->{'a/k'} ?> <?= $user->saskaitos_nr ?></i>
+

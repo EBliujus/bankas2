@@ -1,5 +1,5 @@
 <?php
-    $users = json_decode(file_get_contents(__DIR__ . '/id.json'));
+    $users = json_decode(file_get_contents(__DIR__ . '/customer.json'));
 
     $page = (int) ($_GET['page'] ?? 1);
 
@@ -15,7 +15,7 @@
         usort($users, fn($a, $b) => $a['user_id'] <=> $b['user_id']);
     }
     elseif ($sort == 'id_desc') {
-        usort($users, fn($a, $b) => $a['user_id'] <=> $b['user_id']);
+        usort($users, fn($a, $b) => $b['user_id'] <=> $a['user_id']);
     }
     // $users = array_slice($users, ($page - 1) * 10, 10); skaldo userius po 10 puslapy.
 
@@ -44,9 +44,10 @@
         </fieldset>
     </form>
     <ul>
-    <?php foreach($users as $user) : ?>
+    <?php foreach ($users as $user) : ?>
         <li>
-            <b>ID:</b> <?= $user['user_id'] ?> <i><?= $user['name'] ?> <?= $user['surname'] ?></i>
+           
+            <b>ID:</b> <?= $user->user_id ?> <i><?= $user->name ?> <?= $user->surname ?> <?= $user->{'a/k'} ?> <?= $user->saskaitos_nr ?></i>
             <a href="http://localhost/bankai/u2/edit.php?id= <?= $user['user_id'] ?>">Edit</a>
             <form action="http://localhost/bankai/u2/delete.php?id=<?= $user['user_id'] ?>" method="post">
                 <button type="submit">Delete</button>
