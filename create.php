@@ -3,7 +3,7 @@
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     session_start();
 
-    $users = json_decode(file_get_contents(__DIR__ . '/id.json'));
+    $users = json_decode(file_get_contents(__DIR__ . '/id.json'), 1);
 
     // tikrinam
     foreach($users as $user) {
@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $users = json_decode(file_get_contents(__DIR__ . '/id.json'));
 
-    $users = $user;
+    $users [] = $user;
 
     $users = json_encode($users);
     file_put_contents(__DIR__ . '/id.json', $users);
