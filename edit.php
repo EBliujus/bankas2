@@ -80,9 +80,9 @@ if ($find) {
             <input type="text" name="aKodas">
             <label>Sąskaitos Nr.:</label>
             <input type="text" name="saskaitos_nr">
-            <input hidden value="0.00" name="likutis">
+            <input  value="0.00" name="likutis">
 
-            <button type="submit">Create</button>
+            <button type="submit">Edit</button>
         </fieldset> 
     </form> 
 </body>

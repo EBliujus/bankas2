@@ -1,3 +1,11 @@
+<style>
+    h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
 <?php define('ENTER', true) ?>
 <!DOCTYPE html>
 <html lang="en">

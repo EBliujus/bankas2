@@ -46,8 +46,8 @@
     <ul>
     <?php foreach ($users as $user) : ?>
         <li>
-           
-            <b>ID:</b> <?= $user->user_id ?> <i><?= $user->name ?> <?= $user->surname ?> <?= $user->{'a/k'} ?> <?= $user->saskaitos_nr ?></i>
+  
+            <b>ID:</b> <?= $user->user_id ?> <i><?= $user->name ?> <?= $user->surname ?> <?= $user-> aKodas ?> <?= $user->saskaitos_nr ?></i>
             <a href="http://localhost/bankai/u2/edit.php?id= <?= $user['user_id'] ?>">Edit</a>
             <form action="http://localhost/bankai/u2/delete.php?id=<?= $user['user_id'] ?>" method="post">
                 <button type="submit">Delete</button>

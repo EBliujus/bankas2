@@ -13,8 +13,8 @@
 </style>
 
 <?php
-    session_start();
-defined( 'ENTER' ) || die('You shall NOT pass');
+// defined( 'ENTER' ) || die('You shall NOT pass');
+session_start();
 ?>
 <?php
 /*     $users_ = json_decode(file_get_contents(__DIR__ . '/customer.json'));

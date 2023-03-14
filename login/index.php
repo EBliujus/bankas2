@@ -11,12 +11,12 @@ session_start();
         die;
    } 
 
-    // 2 LOGIN'As
+    // 2 LOGIN
     foreach($users as $user) {
         if ($user['name'] == $_POST['name'] && $user['password'] == md5($_POST['password'])) {
             $_SESSION['logged'] = 1;
             $_SESSION['name'] = $user['name'];
-            header('Location: http://localhost/bankai/u2/index.php');
+            header('Location: http://localhost/bankai/u2/');
             die;
         }
     }
@@ -24,8 +24,7 @@ session_start();
     header('Location: http://localhost/bankai/u2/login/');
     die;
 }
-
-    // 3 SHOW LOGIN FORM
+    // 3 Show Login Form
 
 ?>
 
