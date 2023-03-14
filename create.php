@@ -79,10 +79,8 @@ $saskaita = "{$salis}{$kontroliniai_sk}{$banko_kodas}{$sask_nr}";
     <form action="" method="post">
         <fieldset>
             <legend> Create New:</legend>
-            <b>Name:</b>
             <label>Name:</label>
             <input type="text" name="name" required>
-            <b>Surname:</b>
             <label>Surname:</label>
             <input type="text" name="surname" required>
             <label>aKodas:</label>

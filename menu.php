@@ -10,6 +10,20 @@
         cursor: pointer;
         color: red;
     }
+    a{
+        text-decoration:none;
+        font-size: 16px;
+        color: red;
+        padding: 0px 20px;
+    }
+    a:hover{
+        color: black;
+    }
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 </style>
 
 <?php
