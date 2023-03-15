@@ -1,5 +1,5 @@
 <?php
-    $users = json_decode(file_get_contents(__DIR__ . '/customer.json'));
+    $users = json_decode(file_get_contents(__DIR__ . '/customer.json'), true);
 
     $page = (int) ($_GET['page'] ?? 1);
 
@@ -47,8 +47,8 @@
     <?php foreach ($users as $user) : ?>
         <li>
   
-            <b>ID:</b> <?= $user->user_id ?> <i><?= $user->name ?> <?= $user->surname ?> <?= $user-> aKodas ?> <?= $user->saskaitos_nr ?></i>
-            <a href="http://localhost/bankai/u2/edit.php?id= <?= $user['user_id'] ?>">Edit</a>
+            <b>Klientas:</b> <?= $user["user_id"] ?> <i><?= $user["name"] ?> <?= $user["surname"] ?> <?= $user["aKodas"] ?> <?= $user["saskaitos_nr"] ?></i>
+            <a href="http://localhost/bankai/u2/edit.php?id= <?= $user['user_id'] ?>"><button>Edit</button></a>
             <form action="http://localhost/bankai/u2/delete.php?id=<?= $user['user_id'] ?>" method="post">
                 <button type="submit">Delete</button>
             </form>

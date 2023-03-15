@@ -34,7 +34,7 @@ foreach($users as $user) {
 }
 // GET Scenarijus
 
-$users = json_decode(file_get_contents(__DIR__ . '/customer.json'));
+$users = json_decode(file_get_contents(__DIR__ . '/customer.json'), 1);
 
 $id = (int)$_GET['id'];
 
@@ -46,7 +46,7 @@ foreach($users as $user) {
     }
 }
 
-if ($find) {
+if (!$find) {
     die('User not found');
 }
 
