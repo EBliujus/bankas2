@@ -48,7 +48,7 @@ session_start();
         >Menu
     </h2>
 <a href="http://localhost/bankai/u2/">HOME</a>
-<a href="http://localhost/bankai/u2/index.php">Work Place</a>
+<a href="http://localhost/bankai/u2/employees/index.php">Work Place</a>
 <a href="http://localhost/bankai/u2/create.php">Create New Account</a>
 <a href="http://localhost/bankai/u2/users.php?page=1&sort=asc">Account List</a>
 

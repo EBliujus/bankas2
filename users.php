@@ -30,7 +30,7 @@
     <title>Users</title>
 </head>
 <body>
-        <?php require __DIR__ . '/menu_customer.php' ?>
+        
     <form action="" method="get">
         <fieldset>
             <legend>SORT:</legend>
@@ -47,7 +47,7 @@
     <?php foreach ($users as $user) : ?>
         <li>
   
-            <b>Klientas:</b> <?= $user["user_id"] ?> <i><?= $user["name"] ?> <?= $user["surname"] ?> <?= $user["aKodas"] ?> <?= $user["saskaitos_nr"] ?></i>
+            <b>Klientas:</b> <?= $user["user_id"] ?> <i><?= $user["name"] ?> <?= $user["surname"] ?> <?= $user["aKodas"] ?> <?= $user["saskaitos_nr"] ?> <?= $user["balance"] ?></i>
             <a href="http://localhost/bankai/u2/edit.php?id= <?= $user['user_id'] ?>"><button>Edit</button></a>
             <form action="http://localhost/bankai/u2/delete.php?id=<?= $user['user_id'] ?>" method="post">
                 <button type="submit">Delete</button>
