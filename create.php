@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         'balance' => $_POST['balance'],
     ];
 
-    $users = json_decode(file_get_contents(__DIR__ . '/customer.json'));
+    $users = json_decode(file_get_contents(__DIR__ . '/customer.json'), 1);
 
     $users [] = $user;
 
@@ -47,7 +47,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <!-- sukuriam asmenks koda -->
 <?php
-$I_sk = rand(1,6);
+$I_sk = rand(5,6);
 $metu_sk = substr(rand(1923, 2023), -2);
 $menuo_sk = str_pad(rand(1, 12), 2, 0, STR_PAD_LEFT);
 $diena_sk = str_pad(rand(1, 31), 2, 0, STR_PAD_LEFT);
@@ -94,6 +94,7 @@ $saskaita = "{$salis}{$kontroliniai_sk}{$banko_kodas}{$sask_nr}";
             <input type="text" name="saskaitos_nr" value="<?php echo $saskaita ?>" readonly>
             <label>Balance:</label>
             <input type="text" value="0.00" name="balance" readonly>
+
             <button type="submit">Add new Client</button>
         </fieldset> 
     </form> 

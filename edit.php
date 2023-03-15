@@ -85,33 +85,79 @@ if (!$find) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/">
-    <title>Edit</title>
+    <title>Edit User</title>
+    <style>
+    .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .heading {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #0069d9;
+  }
+  </style>
 </head>
 <body>
     <?php require __DIR__ . '/menu.php' ?>
 
-
-    <form action="?id= <?= $user['user_id'] ?>" method="post">
-        <fieldset>
-            <legend> Edit:</legend>
-            <label>Name:</label>
-            <input type="text" name="name" value= "<?= $user['name'] ?>">
-            <label> Surname: </label>
-            <input type="text" name="surname" value="<?= $user['surname'] ?>">
-            <label>aKodas</label>
-            <input type="text" name="aKodas" value="<?= $user['aKodas'] ?>" readonly>
-            <label>Sąskaitos Nr.:</label>
-            <input type="text" name="saskaitos_nr" value="<?= $user['saskaitos_nr'] ?>" readonly>
-            <label>Balance:</label>
-            <input type="text" value="<?= $user['balance'] ?>" name="balance" readonly>
-            <label>Add money:</label>
-            <input type="text" name="add_money" value="0.00">
-            <label>Take off money:</label>
-            <input type="text" name="take_off_money" value="0.00">
-
-            <button type="submit">Edit</button>
-        </fieldset> 
-    </form> 
+    <div class="container">
+        <h1 class="heading">Edit User</h1>
+        <form action="?id= <?= $user['user_id'] ?>" method="post">
+            <fieldset>
+                <label class="label">Name:</label>
+                <input class="input" type="text" name="name" value= "<?= $user['name'] ?>">
+                <label class="label">Surname:</label>
+                <input class="input" type="text" name="surname" value="<?= $user['surname'] ?>">
+                <label class="label">Personal Code:</label>
+                <input class="input" type="text" name="aKodas" value="<?= $user['aKodas'] ?>" readonly>
+                <label class="label">Account Number:</label>
+                <input class="input" type="text" name="saskaitos_nr" value="<?= $user['saskaitos_nr'] ?>" readonly>
+                <label class="label">Current Balance:</label>
+                <input class="input" type="text" value="<?= $user['balance'] ?>" name="balance" readonly>
+                <label class="label">Add Money:</label>
+                <input class="input" type="text" name="add_money" value="0.00">
+                <label class="label">Take Off Money:</label>
+                <input class="input" type="text" name="take_off_money" value="0.00">
+                <button class="button" type="submit">Edit User</button>
+            </fieldset> 
+        </form> 
+    </div>
 </body>
 </html>

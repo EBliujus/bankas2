@@ -28,6 +28,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #eee;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        button {
+            padding: 6px 10px;
+            border: none;
+            background-color: #008CBA;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #00698C;
+        }
+    </style>
 </head>
 <body>
         
@@ -43,17 +70,31 @@
             <button type="submit">Sort</button>
         </fieldset>
     </form>
-    <ul>
-    <?php foreach ($users as $user) : ?>
-        <li>
-  
-            <b>Klientas:</b> <?= $user["user_id"] ?> <i><?= $user["name"] ?> <?= $user["surname"] ?> <?= $user["aKodas"] ?> <?= $user["saskaitos_nr"] ?> <?= $user["balance"] ?></i>
-            <a href="http://localhost/bankai/u2/edit.php?id= <?= $user['user_id'] ?>"><button>Edit</button></a>
-            <form action="http://localhost/bankai/u2/delete.php?id=<?= $user['user_id'] ?>" method="post">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Personal code</th>
+            <th>Account number</th>
+            <th>Balance</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <?php foreach ($users as $user) : ?>
+        <tr>
+            <td><?= $user["user_id"] ?></td>
+            <td><?= $user["name"] ?></td>
+            <td><?= $user["surname"] ?></td>
+            <td><?= $user["aKodas"] ?></td>
+            <td><?= $user["saskaitos_nr"] ?></td>
+            <td><?= $user["balance"] ?></td>
+            <td><a href="http://localhost/bankai/u2/edit.php?id=<?= $user['user_id'] ?>"><button>Edit</button></a></td>
+            <td><form action="http://localhost/bankai/u2/delete.php?id=<?= $user['user_id'] ?>" method="post">
                 <button type="submit">Delete</button>
-            </form>
-        </li>
-    <?php endforeach ?>
-    </ul>
+            </form></td>
+        </tr>
+        <?php endforeach ?>
+    </table>
 </body>
 </html>
