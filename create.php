@@ -79,8 +79,7 @@ $saskaita = "{$salis}{$kontroliniai_sk}{$banko_kodas}{$sask_nr}";
 </head>
 <body>
     <?php require __DIR__ . '/menu.php' ?>
-
-
+    
     <form action="" method="post">
         <fieldset>
             <legend> Create New:</legend>

@@ -27,37 +27,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/users.css">
     <title>Users</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            background-color: #eee;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        button {
-            padding: 6px 10px;
-            border: none;
-            background-color: #008CBA;
-            color: #fff;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #00698C;
-        }
-    </style>
 </head>
-<body>
-        
+<body>  
     <form action="" method="get">
         <fieldset>
             <legend>SORT:</legend>

@@ -85,54 +85,8 @@ if (!$find) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/edit.css">
     <title>Edit User</title>
-    <style>
-    .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .heading {
-    display: flex;
-    align-items:center;
-    justify-content:center;
-  }
-  
-  .label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .input {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .button {
-    display: block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #007bff;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: #0069d9;
-  }
-  </style>
 </head>
 <body>
     <?php require __DIR__ . '/menu.php' ?>
