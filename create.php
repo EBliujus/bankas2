@@ -74,28 +74,29 @@ $saskaita = "{$salis}{$kontroliniai_sk}{$banko_kodas}{$sask_nr}";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/">
+    <link rel="stylesheet" href="./css/create.css">
     <title>Create</title>
 </head>
 <body>
     <?php require __DIR__ . '/menu.php' ?>
     
     <form action="" method="post">
-        <fieldset>
-            <legend> Create New:</legend>
-            <label>Name:</label>
-            <input type="text" name="name" required>
-            <label>Surname:</label>
-            <input type="text" name="surname" required>
-            <label>aKodas:</label>
-            <input type="text" name="aKodas" value="<?php echo $ak ?>" readonly>
-            <label>Sąskaitos Nr.:</label>
-            <input type="text" name="saskaitos_nr" value="<?php echo $saskaita ?>" readonly>
-            <label>Balance:</label>
-            <input type="text" value="0.00" name="balance" readonly>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required>
 
-            <button type="submit">Add new Client</button>
-        </fieldset> 
+        <label for="surname">Surname:</label>
+        <input type="text" name="surname" id="surname" required>
+
+        <label for="aKodas">aKodas:</label>
+        <input type="text" name="aKodas" id="aKodas" value="<?php echo $ak ?>" readonly>
+
+        <label for="saskaitos_nr">Sąskaitos Nr.:</label>
+        <input type="text" name="saskaitos_nr" id="saskaitos_nr" value="<?php echo $saskaita ?>" readonly>
+
+        <label for="balance">Balance:</label>
+        <input type="text" name="balance" id="balance" value="0.00" readonly>
+
+        <button type="submit">Add new Client</button>
     </form> 
 </body>
 </html>
