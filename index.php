@@ -1,5 +1,6 @@
 <style>
-    h1 {
+    h1 
+    {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -16,7 +17,7 @@
     <title>U2_Bankas</title>
 </head>
 <body>
-    <?php require __DIR__ . '/menu.php'?>
+     <?php require __DIR__ . '/menu.php'?> 
     <h1>Welcome to your First Bank</h1>
 </body>
 </html>

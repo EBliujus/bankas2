@@ -32,16 +32,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $add_money = (float)$_POST['add_money'];
             if ($add_money > 0) {
                 $user['balance'] += $add_money;
-                $_SESSION['msg'] = ['type' => 'ok', 'text' => 'Money added'];
+                $_SESSION['msg'] = ['type' => 'ok', 'text' => 'Pinigai prideti'];
             }
 
             // atimti pinigu
             $take_off_money = (float)$_POST['take_off_money'];
             if ($take_off_money > 0 && $take_off_money <= $user['balance']) {
                 $user['balance'] -= $take_off_money;
-                $_SESSION['msg'] = ['type' => 'ok', 'text' => 'Money was taken '];
+                $_SESSION['msg'] = ['type' => 'ok', 'text' => 'Pinigai buvo nuimti'];
             } elseif ($take_off_money > 0) {
-                $_SESSION['msg'] = ['type' => 'error', 'text' => 'Not enough money'];
+                $_SESSION['msg'] = ['type' => 'error', 'text' => 'Nepakanka lesu'];
                 header('Location: http://localhost/bankai/u2/edit.php?id=' . $id);
                 die;
             }
@@ -96,9 +96,9 @@ if (!$find) {
         <form action="?id= <?= $user['user_id'] ?>" method="post">
             <fieldset>
                 <label class="label">Name:</label>
-                <input class="input" type="text" name="name" value= "<?= $user['name'] ?>">
+                <input class="input" type="text" name="name" value= "<?= $user['name'] ?>" readonly>
                 <label class="label">Surname:</label>
-                <input class="input" type="text" name="surname" value="<?= $user['surname'] ?>">
+                <input class="input" type="text" name="surname" value="<?= $user['surname'] ?>" readonly>
                 <label class="label">Personal Code:</label>
                 <input class="input" type="text" name="aKodas" value="<?= $user['aKodas'] ?>" readonly>
                 <label class="label">Account Number:</label>
@@ -106,9 +106,9 @@ if (!$find) {
                 <label class="label">Current Balance:</label>
                 <input class="input" type="text" value="<?= $user['balance'] ?>" name="balance" readonly>
                 <label class="label">Add Money:</label>
-                <input class="input" type="text" name="add_money" value="0.00">
+                <input class="input" type="text" step="0.01" name="add_money" value="0.00">
                 <label class="label">Take Off Money:</label>
-                <input class="input" type="text" name="take_off_money" value="0.00">
+                <input class="input" type="text" step="0.01" name="take_off_money" value="0.00">
                 <button class="button" type="submit">Edit User</button>
             </fieldset> 
         </form> 

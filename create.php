@@ -47,7 +47,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <!-- sukuriam asmenks koda -->
 <?php
-$I_sk = rand(5,6);
+$I_sk = rand(3,6);
 $metu_sk = substr(rand(1923, 2023), -2);
 $menuo_sk = str_pad(rand(1, 12), 2, 0, STR_PAD_LEFT);
 $diena_sk = str_pad(rand(1, 31), 2, 0, STR_PAD_LEFT);
@@ -94,7 +94,7 @@ $saskaita = "{$salis}{$kontroliniai_sk}{$banko_kodas}{$sask_nr}";
         <input type="text" name="saskaitos_nr" id="saskaitos_nr" value="<?php echo $saskaita ?>" readonly>
 
         <label for="balance">Balance:</label>
-        <input type="text" name="balance" id="balance" value="0.00" readonly>
+        <input type="text" name="balance" id="balance" value="0.00" hidden readonly>
 
         <button type="submit">Add new Client</button>
     </form> 

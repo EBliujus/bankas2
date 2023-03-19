@@ -47,18 +47,18 @@ session_start();
         justify-content:center;"
         >Menu
     </h2>
-<a href="http://localhost/bankai/u2/">HOME</a>
-<a href="http://localhost/bankai/u2/employees/index.php">Work Place</a>
-<a href="http://localhost/bankai/u2/create.php">Create New Account</a>
-<a href="http://localhost/bankai/u2/users.php?page=1&sort=asc">Account List</a>
+        <a href="http://localhost/bankai/u2/">HOME</a>
+        <a href="http://localhost/bankai/u2/employees/index.php">Work Place</a>
+        <a href="http://localhost/bankai/u2/create.php">Create New Account</a>
+        <a href="http://localhost/bankai/u2/users.php?page=1&sort=asc">Account List</a>
 
-<?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == 1) : ?>
-    <h3><?= $_SESSION['name']?></h3>
-<form action="http://localhost/bankai/u2/login/?logout" method="post">
-    <button type="submit">Log Out</button>
-</form>
-<?php else : ?>
-<a class="login" href="http://localhost/bankai/u2/login">Login</a>
+        <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == 1) : ?>
+            <h3><?= $_SESSION['name']?></h3>
+        <form action="http://localhost/bankai/u2/login/?logout" method="post">
+            <button type="submit">Log Out</button>
+        </form>
+        <?php else : ?>
+        <a class="login" href="http://localhost/bankai/u2/login">Login</a>
 <?php endif ?>
 
 
