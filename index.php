@@ -17,7 +17,7 @@
     <title>U2_Bankas</title>
 </head>
 <body>
-     <?php require __DIR__ . '/menu.php'?> 
+    <div> <?php require __DIR__ . '/menu.php'?> </div>
     <h1>Welcome to your First Bank</h1>
 </body>
 </html>
