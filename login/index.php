@@ -21,7 +21,7 @@ session_start();
         }
     }
     $_SESSION['msg'] = ['type' => 'error', 'text' => 'Login failed'];
-    header('Location: http://localhost/bankai/u2/login/');
+    header('Location: http://localhost/bankai/u2/');
     die;
 }
     // 3 Show Login Form
@@ -55,6 +55,7 @@ session_start();
     <?= $msg['text'] ?>
 </h2>
 <?php endif?>
+<div>
     <h1>LOGIN</h1>
     <form action="" method="post">
         <div>
@@ -69,5 +70,6 @@ session_start();
             <button type="submit">Login</button>
         </div>
     </form>
+</div>
 </body>
 </html>

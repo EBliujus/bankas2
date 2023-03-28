@@ -40,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($take_off_money > 0 && $take_off_money <= $user['balance']) {
                 $user['balance'] -= $take_off_money;
                 $_SESSION['msg'] = ['type' => 'ok', 'text' => 'Pinigai buvo nuimti'];
+                die;
             } elseif ($take_off_money > 0) {
                 $_SESSION['msg'] = ['type' => 'error', 'text' => 'Nepakanka lesu'];
                 header('Location: http://localhost/bankai/u2/edit.php?id=' . $id);
